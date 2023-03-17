@@ -8,10 +8,16 @@
 
 <style>
 
-main, footer {
-  padding-left: 280px;
+@media only screen and (min-width: 768px){
+  main, footer {
+
+    padding-left: 280px;
+  }
 }
 
+sidebar {
+  z-index: 999;
+}
 </style>
 <script>
 import HeaderComp from "@/components/HeaderComp";
