@@ -1,34 +1,38 @@
-<template>
-  <HeaderComp/>
-  <main class="m-5 pt-4">
-    <router-view/>
-  </main>
+<script setup>
+import SidebarComp from "./components/SidebarComp.vue";
+import HeaderComp from "./components/HeaderComp.vue";
+</script>
 
+<template>
+  <div id="page-container"
+       class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow">
+    <SidebarComp/>
+    <HeaderComp/>
+    <main id="main-container">
+      <router-view/>
+    </main>
+  </div>
 </template>
 
+
 <style>
-
-@media only screen and (min-width: 768px){
-  main, footer {
-
-    padding-left: 280px;
-  }
+.enterpriseLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 2;
+}
+.editableItem {
+  border-bottom: 1px solid transparent;
+  border-bottom-color: var(--bs-table-border-color);
+  display: inline-block;
+  min-width: 1px;
 }
 
-sidebar {
-  z-index: 999;
+.editableItem:focus-visible {
+  outline: 0;
 }
 </style>
-<script>
-import HeaderComp from "@/components/HeaderComp";
-
-export default {
-  name: 'App',
-  components: {
-    HeaderComp,
-  }
-}
-
-</script>
 
 
